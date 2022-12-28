@@ -1,0 +1,225 @@
+#include<stdio.h>
+#include<string.h>
+#include<stdlib.h>
+int cylinder(){
+    int h,r;
+    printf("Enter Height =");
+    scanf("%d",&h);
+    printf("\nEnter Radius =");
+    scanf("%d",&r);
+    float vol;
+    vol=3.14*h*r*r;
+    printf("\nVol of cylinder=%.2f",vol);
+    return 0;
+}
+int marksheet(){
+    int n;
+    printf("\nEnter the no. students=");
+    scanf("%d",&n);
+    while(n--){
+       int rollno, std, maths, science, english, arch, computer;
+  char name[30];
+
+  printf("Enter your Roll No:");
+  scanf("%d", &rollno);
+
+  printf("Enter your name:");
+  scanf(" %s", name);
+  //gets(name);
+
+  printf("Enter your Semester:");
+  scanf("%d", &std);
+
+  printf("Enter marks of maths:");
+  scanf("%d", &maths);
+
+  printf("Enter marks of science:");
+  scanf("%d", &science);
+
+  printf("Enter marks of english:");
+  scanf("%d", &english);
+
+  printf("Enter marks of architecture:");
+  scanf("%d", &arch);
+
+  printf("Enter marks of computer:");
+  scanf("%d", &computer);
+
+  printf("===================================================\n");
+  printf("MARKSHEET OF SEMESTER:%d, SRM Institute Of Science And Technolog\n", std);
+  printf("===================================================\n");
+  printf("Roll No.: %d Student Name: %s\n", rollno, name);
+  printf("---------------------------------------------------\n");
+  printf("SUBJECT\t\t\tMARKS\n");
+  printf("---------------------------------------------------\n");
+  printf("Maths\t\t\t %d \n", maths);
+  printf("Science\t\t\t %d \n", science);
+  printf("English\t\t\t %d \n", english);
+  printf("Architecture\t\t\t %d \n", arch);
+  printf("Computer\t\t %d \n", computer);
+  printf("---------------------------------------------------\n");
+  printf("Total Marks:\t\t%d\n", maths+science+english+arch+computer);
+  printf("===================================================\n");
+
+    }
+    return 0;}
+
+
+int pattern(){
+      int i, j, rows;
+   printf("Enter the number of rows: ");
+   scanf("%d", &rows);
+   for (i = 1; i <= rows; ++i) {
+      for (j = 1; j <= i; ++j) {
+         printf("* ");
+      }
+      printf("\n");
+   }
+   return 0;
+}
+void revstr(char *str1)  
+{  
+     
+    int i, len, temp;  
+    len = strlen(str1);   
+    for (i = 0; i < len/2; i++)  
+    {  
+        temp = str1[i];  
+        str1[i] = str1[len - i - 1];  
+        str1[len - i - 1] = temp;  
+    }  
+}  
+ void reverse()  
+    {  
+        char str[50]; 
+        printf (" Enter the string: ");  
+        gets(str);
+          
+        printf (" \n Before: %s \n", str);  
+
+        revstr(str);  
+        printf (" After: %s", str);  
+    }   
+int swapno(){
+int a,b;
+printf("\nenter a=");
+scanf("%d",&a);
+printf("\nenter b=");
+scanf("%d",&b);
+a=a+b;
+b=a-b;
+a=a-b;
+printf("\na=%d and b=%d",a,b);
+return 0;
+}
+int bsort(){
+    int n;
+    printf("\nEnter the size for array=");
+    scanf("%d",&n);
+    int a[n];
+    int i,j,temp;
+    printf("\nenter the elements of array\n");
+    for(i=0;i<n;i++){
+        scanf("%d",&a[i]);
+    }
+    printf("\nbefore sorting");
+      for(i=0;i<n;i++){
+        printf("\na[%d]=%d",i+1,a[i]);
+    }
+
+    for(i=0;i<n;i++){
+        for(j=0;j<n-i-1;j++){
+            if(a[j]>a[j+1]){
+                temp=a[j];
+                a[j]=a[j+1];
+                a[j+1]=temp;
+            }
+        }
+    }
+    printf("\nafter sorting");
+    for(i=0;i<n;i++){
+        printf("\na[%d]=%d",i+1,a[i]);
+    }
+    return 0;
+}
+int palindrome(){
+    int n;
+    printf("\nenter number to check for  palindrome=");
+    scanf("%d",&n);
+    int r,sum=0,temp;
+    temp=n;
+    while(n!=0){
+        r=n%10;
+        sum=sum*10+r;
+        n=n/10;
+    }
+    if(sum==temp) printf("\nyes,%d is a palindrome number",temp);
+    else printf("\nno,%d is not a palindrome number",temp);
+  return 0;
+}
+int leapyr(){
+    int y;
+    printf("\nEnter the year =");
+    scanf("%d",&y);
+    if(y%100==0){
+        if(y%400==0) printf("\nyes %d is leap year",y);
+        else printf("\n No %d is not a leap year",y);
+    }
+    else if(y%4==0 && y%100!=0) printf("\nyes %d is a leap year",y);
+    else printf("\nNo %d is not a leap year",y);
+    return 0;
+}
+int sumdigit(){
+    int n;
+    printf("\nEnter the number=");
+    scanf("%d",&n);
+    int sum=0,r,temp;
+    temp=n;
+    while(n!=0){
+        r=n%10;
+        sum=sum+r;
+        n=n/10;
+    }
+    printf("\nsum of digits of %d is=%d",temp,sum);
+   return 0;
+}
+int areacircle(){
+    float r;
+    printf("\nEnter Radius=");
+    scanf("%f",&r);
+    r=r*r*3.14;
+    printf("\n Area =%.2f",r);
+    return 0;
+    } 
+
+int main(){
+    int n;
+
+    do{
+    printf("\n\n\n*** WELCOME TO MENU DRIVEN PROGRAM *** \n        CREATED BY KISHAN PANDEY\n\n\n");
+    printf("SELECT YOUR CHOICE BY PRESSING 0 TO 10 \n\n");
+    printf("0. TO EXIT\n1. TO FIND VOLUME OF CYLINDER\n2. DISPLAY MARKSHEET OF STUDENTS\n3. TO DISPLAY PYRAMID\n");
+    printf("4. TO REVERSE STRING\n5. TO SWAP TWO NUMBERS USING POINTER\n6. TO SORT GIVEN ARRAY\n");
+    printf("7. TO CHECK WHETHER GIVEN NUMBER IS PALINDROME\n8. TO CHECK FOR LEAP YEAR\n9. TO FIND SUM OF DIGITS OF GIVEN NUMBER\n");
+    printf("10.TO FIND AREA OF THE CIRCLE\n");
+
+int n;
+    scanf("%d",&n);
+switch(n){
+    case 0: printf("\nSuccessfully Exited");return 0;
+    case 1: cylinder();break;
+    case 2: marksheet();break;
+    case 3: pattern();break;
+    case 4: reverse();break;
+    case 5: swapno();break;
+    case 6: bsort();break;
+    case 7: palindrome();break;
+    case 8: leapyr();break;
+    case 9: sumdigit();break;
+    case 10: areacircle();break;
+    default : printf("selected invalid option\n");
+}
+    } while(n!=0);
+    getchar();
+return 0;
+}
